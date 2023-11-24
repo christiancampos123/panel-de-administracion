@@ -2,22 +2,6 @@
     margin: 0;
     padding: 0;
   }
-
-  .full-menu{
-    position: fixed;
-    top: 0;
-    left: 0;
-    width:100vw;
-    height:0vh;
-    background-color:yellow;
-    margin: 0 0;
-    transition: all 0.25s;
-  }
-
-  .full-menu-active{
-    height: 100vh;
-  }
-
   
   button {
     background: transparent;
@@ -55,22 +39,58 @@
     justify-content: space-between;
     padding: 1.5rem 0;
   }
-
+/* boton menu y menu oculto */
   .top-bar-hamburguer-active{
-    z-index: 10;
+    z-index: 2;
   }
   
   .top-bar-hamburguer button svg {
     width: 3rem;
   }
   
-  .top-bar-hamburguer button svg path {
-    fill: hsl(0, 0%, 100%);
+  .full-menu{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width:100vw;
+    height:0vh;
+    background-color:rgb(84, 61, 218);
+    margin: 0 0;
+    transition: all 0.3s;
+    z-index:0;
+    overflow: hidden;
+    display:flex;
+    justify-content: center;
   }
 
-  .top-bar-hamburguer-active button svg path{
-    fill: black;
+  .full-menu div{
+    overflow: hidden;
   }
+
+  .full-menu-active{
+    height: 100vh;
+    display:block;
+    z-index: 1;
+    display:flex;
+    justify-content: center;
+    padding-top: 2rem;
+  }
+
+  .menu-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 80%;
+  }
+
+  .menu-form-title{
+    margin-bottom: 3rem;
+  }
+  .menu-form .form-row {
+    width: 100%;
+  }
+
+
   
   .filter {
     align-items: center;
@@ -219,3 +239,60 @@
     height: 20vh;
     resize: none;
   }
+
+  /* not mine */
+
+  .menu {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    padding: 0;
+  }
+
+  .menu:hover {
+    .line{
+      stroke-width: 8;
+    }
+  }
+
+  .line {
+    fill: none;
+    stroke: hsl(0, 0%, 100%);
+    stroke-width: 6;
+    transition: stroke-dasharray 400ms cubic-bezier(0.4, 0, 0.2, 1),
+      stroke-dashoffset 400ms cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  .line1 {
+    stroke-dasharray: 60 207;
+    stroke-width: 6;
+  }
+  .line2 {
+    stroke-dasharray: 60 60;
+    stroke-width: 6;
+  }
+  .line3 {
+    stroke-dasharray: 60 207;
+    stroke-width: 6;
+  }
+  .opened .line1 {
+    stroke-dasharray: 90 207;
+    stroke-dashoffset: -134;
+    stroke-width: 6;
+    stroke: hsl(0, 0%, 0%);
+  }
+  .opened .line2 {
+    stroke-dasharray: 1 60;
+    stroke-dashoffset: -30;
+    stroke-width: 6;
+    stroke: hsl(0, 0%, 0%);
+  }
+  .opened .line3 {
+    stroke-dasharray: 90 207;
+    stroke-dashoffset: -134;
+    stroke-width: 6;
+    stroke: hsl(0, 0%, 0%);
+  }
+
+  /* not mine */
+  
