@@ -213,7 +213,6 @@ header {
   background-color: hsl(0, 0%, 100%);
   display: flex;
   gap: 0.5rem;
-  padding-left: 1rem;
   margin-bottom: 1rem;
   padding-right: 0.5rem;
 }
@@ -221,12 +220,23 @@ header {
 .form-buttons-main, .form-buttons-images{
   display: flex;
   align-items: center;
+  background-color: hsl(0, 0%, 69%);
+}
+
+.form-buttons-main:hover, .form-buttons-images :hover{
+  background-color: hsl(0, 0%, 42%);
+}
+
+.form-buttons-main button, .form-buttons-images button{
+  height: 100%;
+  /* width: 100%; */
+  width: 5rem;
 }
 
 .form-buttons-change{
   display: flex;
   width: 50%;
-  gap:1rem;
+
 }
 
 .form-buttons-actions{
@@ -294,6 +304,11 @@ header {
   resize: none;
 }
 
+.images{
+  display:none;
+  flex:2;
+}
+
 /* not mine */
 .menu {
   background-color: transparent;
@@ -359,4 +374,8 @@ header {
 .block{
   /* display:block; */
   height: 10vh;
+}
+
+.display{
+  display:block;
 }
