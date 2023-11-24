@@ -1,9 +1,6 @@
 import './menu.js';
 import './filter.js';
-import './mainButton.js';
-import './imagesButton.js';
 import './editButton.js';
-import './broomButton.js';
+import './FormButtons.js';
 import './deleteButton.js';
-import './saveButton.js';
 import './image.js';

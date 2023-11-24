@@ -7,8 +7,6 @@
   display: none;
 }
 
-
-
 button {
   background: transparent;
   border: none;
@@ -58,7 +56,7 @@ header {
 }
 
 /* boton menu y menu oculto */
-.top-bar-hamburguer-active {
+.top-bar-hamburguer {
   z-index: 2;
 }
 
@@ -66,6 +64,66 @@ header {
   width: 3rem;
 }
 
+/* Animacion svg vvvvvvvvvvvvvv */
+.menu {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  padding: 0;
+}
+
+.menu:hover .line {
+  stroke-width: 8;
+  stroke: orange;
+}
+
+.line {
+  fill: none;
+  stroke: hsl(0, 0%, 100%);
+  stroke-width: 6;
+
+  transition: stroke-dasharray 400ms cubic-bezier(0.4, 0, 0.2, 1),
+    stroke-dashoffset 400ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.line1 {
+  stroke-dasharray: 60 207;
+  stroke-width: 6;
+}
+
+.line2 {
+  stroke-dasharray: 60 60;
+  stroke-width: 6;
+}
+
+.line3 {
+  stroke-dasharray: 60 207;
+  stroke-width: 6;
+}
+
+.opened .line1 {
+  stroke: hsl(0, 0%, 0%);
+  stroke-dasharray: 90 207;
+  stroke-dashoffset: -134;
+  stroke-width: 6;
+}
+
+.opened .line2 {
+  stroke: hsl(0, 0%, 0%);
+  stroke-dasharray: 1 60;
+  stroke-dashoffset: -30;
+  stroke-width: 6;
+}
+
+.opened .line3 {
+  stroke: hsl(0, 0%, 0%);
+  stroke-dasharray: 90 207;
+  stroke-dashoffset: -134;
+  stroke-width: 6;
+}
+/* Animacion svg ^^^^^^^^^^^^ */
+/* Menu desplegable Hamburger  vvvvvvvvvvvvvv */
 .full-menu {
   background-color: rgb(84, 61, 218);
   display: flex;
@@ -94,6 +152,7 @@ header {
   box-sizing: border-box;
   z-index: 1;
 }
+/* Menu desplegable Hamburger ^^^^^^^^^^^^*/
 
 .menu-form {
   align-items: center;
@@ -132,7 +191,7 @@ header {
   fill: hsl(34, 79%, 53%);
 }
 
-/* desplegable VVVVVVVV*/
+/* desplegable filtro VVVVVVVV*/
 .filter-inputs {
   width: 90%;
   height: 0vh;
@@ -141,15 +200,15 @@ header {
 
 }
 
-.filter .filter-inputs .form-row .form-element .form-element-label label {
+.filter-inputs label {
   color: black;
 }
 
 .filter-inputs input {
   width: 100%;
 }
-
 /* desplegable ^^^^^^^^^^^^ */
+
 .crud {
   display: flex;
   gap: 5%;
@@ -233,7 +292,6 @@ header {
 .form-buttons-main button,
 .form-buttons-images button {
   height: 100%;
-  /* width: 100%; */
   width: 5rem;
 }
 
@@ -263,7 +321,7 @@ header {
 .form-save-button button:hover svg path {
   fill: hsl(34, 79%, 53%);
 }
-
+/* principal button */
 .form-row {
   display: flex;
   gap: 2rem;
@@ -308,95 +366,17 @@ header {
   resize: none;
 }
 
+/* imagenes */
 .images {
   display: none;
   flex: 2;
 }
 
-/* not mine */
-.menu {
-  background-color: transparent;
-  border: none;
-  cursor: pointer;
-  display: flex;
-  padding: 0;
-}
-
-.menu:hover .line {
-
-  stroke-width: 8;
-  stroke: orange;
-
-}
-
-.line {
-  fill: none;
-  stroke: hsl(0, 0%, 100%);
-  stroke-width: 6;
-
-  transition: stroke-dasharray 400ms cubic-bezier(0.4, 0, 0.2, 1),
-    stroke-dashoffset 400ms cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.line1 {
-  stroke-dasharray: 60 207;
-  stroke-width: 6;
-}
-
-.line2 {
-  stroke-dasharray: 60 60;
-  stroke-width: 6;
-}
-
-.line3 {
-  stroke-dasharray: 60 207;
-  stroke-width: 6;
-}
-
-.opened .line1 {
-  stroke: hsl(0, 0%, 0%);
-  stroke-dasharray: 90 207;
-  stroke-dashoffset: -134;
-  stroke-width: 6;
-}
-
-.opened .line2 {
-  stroke: hsl(0, 0%, 0%);
-  stroke-dasharray: 1 60;
-  stroke-dashoffset: -30;
-  stroke-width: 6;
-}
-
-.opened .line3 {
-  stroke: hsl(0, 0%, 0%);
-  stroke-dasharray: 90 207;
-  stroke-dashoffset: -134;
-  stroke-width: 6;
-}
-
-
-/* not mine */
-.block {
-  /* display:block; */
-  height: 10vh;
-}
-
-.display {
-  display: block;
-}
-
-
-
-
 .image-placeholder {
   width: 300px;
-  /* Ancho deseado */
   height: 200px;
-  /* Altura deseada */
   background-color: #ddd;
-  /* Color de fondo o imagen de carga */
   border: 1px solid #999;
-  /* Borde opcional para simular un contorno */
   display: flex;
   align-items: center;
   justify-content: center;
@@ -404,10 +384,8 @@ header {
   color: #666;
 }
 
-/* Estilos adicionales para mejorar la apariencia */
 .image-placeholder:before {
   content: '\1F5BC';
-  /* Código unicode para el símbolo de imagen (puedes cambiar esto) */
   font-size: 40px;
   color: #999;
 }
@@ -430,4 +408,13 @@ header {
   max-width: 80%;
   max-height: 80%;
   overflow: auto;
+}
+
+/* globales */
+.block {
+  height: 10vh;
+}
+
+.display {
+  display: block;
 }
