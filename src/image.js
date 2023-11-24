@@ -1,9 +1,6 @@
 export default (() => {
     let images = document.querySelectorAll(".image-placeholder");
-    window.addEventListener("click", () => {
-         
 
-    });
     images.forEach(image => {
         image.addEventListener("click", () => {
             // Crear un div modal
@@ -17,6 +14,11 @@ export default (() => {
             document.body.appendChild(modal);
 
             // Agregar un evento de clic al modal para cerrarlo al hacer clic fuera de él
+            modal.addEventListener("click", () => {
+                document.body.removeChild(modal);
+
+                
+            });
         });
     });
 })();
