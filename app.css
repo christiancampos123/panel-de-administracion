@@ -1,298 +1,362 @@
 * {
-    margin: 0;
-    padding: 0;
-  }
-  
-  button {
-    background: transparent;
-    border: none;
-    cursor: pointer;
-  }
-  
-  a {
-    text-decoration: none;
-  }
-  
-  ul {
-    list-style: none;
-  }
-  
-  h1, h2, h3, h4, h5, h6 {
-    color: hsl(0, 0%, 100%);
-    font-family: 'Roboto', sans-serif;
-  }
-  
-  input, label, select, textarea, li, span, p {
-    color: hsl(0, 0%, 100%);
-    font-family: 'Roboto', sans-serif;
-  }
-  
-  body {
-    background-color: hsl(226, 63%, 45%);
-    margin: 0 auto;
-    width: 90%;
-  }
-  
-  header {
-    align-items: center;
-    display: flex;
-    justify-content: space-between;
-    padding: 1.5rem 0;
-  }
+  margin: 0;
+  padding: 0;
+}
+
+.none{
+  display:none;
+}
+
+
+
+button {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+a {
+  text-decoration: none;
+}
+
+ul {
+  list-style: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: hsl(0, 0%, 100%);
+  font-family: 'Roboto', sans-serif;
+}
+
+input,
+label,
+select,
+textarea,
+li,
+span,
+p {
+  color: hsl(0, 0%, 100%);
+  font-family: 'Roboto', sans-serif;
+}
+
+body {
+  background-color: hsl(226, 63%, 45%);
+  margin: 0 auto;
+  width: 90%;
+}
+
+header {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+  padding: 1.5rem 0;
+}
+
 /* boton menu y menu oculto */
-  .top-bar-hamburguer-active{
-    z-index: 2;
-  }
-  
-  .top-bar-hamburguer button svg {
-    width: 3rem;
-  }
-  
-  .full-menu{
-    position: fixed;
-    top: 0;
-    left: 0;
-    width:100vw;
-    height:0vh;
-    background-color:rgb(84, 61, 218);
-    margin: 0 0;
-    transition: all 0.3s;
-    z-index:0;
-    overflow: hidden;
-    display:flex;
-    justify-content: center;
-  }
+.top-bar-hamburguer-active {
+  z-index: 2;
+}
 
-  .full-menu div{
-    overflow: hidden;
-  }
+.top-bar-hamburguer button svg {
+  width: 3rem;
+}
 
-  .full-menu-active{
-    height: 100vh;
-    display:block;
-    z-index: 1;
-    display:flex;
-    justify-content: center;
-    padding-top: 2rem;
-  }
+.full-menu {
+  background-color: rgb(84, 61, 218);
+  display: flex;
+  height: 0;
+  justify-content: center;
+  left: 0;
+  margin: 0 0;
+  overflow: hidden;
+  position: absolute;
+  top: 0;
+  transition: all 0.25s;
+  width: 100%;
+  z-index: 0;
+  box-sizing:border-box;
+}
 
-  .menu-form {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 80%;
-  }
+.full-menu div {
+  overflow: hidden;
+}
 
-  .menu-form-title{
-    margin-bottom: 3rem;
-  }
-  .menu-form .form-row {
-    width: 100%;
-  }
+.full-menu-active {
+  display: flex;
+  height: 100%;
+  justify-content: center;
+  padding-top: 2rem;
+  box-sizing:border-box;
+  z-index: 1;
+}
 
+.menu-form {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+}
 
-  
-  .filter {
-    align-items: center;
-    background-color: hsl(0, 0%, 100%);
-    display: flex;
-    justify-content: center;
-    margin-bottom: 2rem;
-    padding: 0.2rem 0;
-  }
-  
-  .filter-button button svg {
-    width: 2rem;
-  }
-  
-  .filter-button button svg path {
-    fill: hsl(207, 85%, 69%);
-  }
-  
-  .filter-button button:hover svg path {
-    fill: hsl(34, 79%, 53%);
-  }
-  
-  .crud {
-    display: flex;
-    gap: 5%;
-    justify-content: space-between;
-  }
-  
-  .table {
-    display: flex;
-    flex: 1;
-    flex-direction: column;
-    gap: 1rem;
-  }
-  
-  .table-buttons {
-    background-color: hsl(207, 85%, 69%);
-    display: flex;
-    gap: 0.5rem;
-    justify-content: flex-end;
-  }
-  
-  .edit-button button svg,
-  .delete-button button svg {
-    width: 2rem;
-  }
-  
-  .edit-button button svg path,
-  .delete-button button svg path {
-    fill: hsl(0, 0%, 100%);
-  }
-  
-  .edit-button button:hover svg path,
-  .delete-button button:hover svg path {
-    fill: hsl(34, 79%, 53%);
-  }
-  
-  .table-data {
-    background-color: hsl(226, 64%, 66%);
-    padding: 0.5rem;
-  }
-  
-  .table-data ul {
-    display: flex;
-    flex-direction: column;
-    gap: 0.5rem;
-  }
-  
-  .table-data ul li span {
-    font-weight: 700;
-  }
-  
-  .table-data ul li span::after {
-    content: ":";
-    margin-right: 0.5rem;
-  }
-  
-  .form {
-    flex: 2;
-  }
-  
-  .form-buttons {
-    background-color: hsl(0, 0%, 100%);
-    display: flex;
-    gap: 0.5rem;
-    justify-content: flex-end;
-    margin-bottom: 1rem;
-    padding-right: 0.5rem;
-  }
-  
-  .form-clean-button button svg,
-  .form-save-button button svg {
-    width: 2rem;
-  }
-  
-  .form-clean-button button svg path,
-  .form-save-button button svg path {
-    fill: hsl(207, 85%, 69%);
-  }
-  
-  .form-clean-button button:hover svg path,
-  .form-save-button button:hover svg path {
-    fill: hsl(34, 79%, 53%);
-  }
-  
-  .form-row {
-    display: flex;
-    gap: 2rem;
-  }
-  
-  .form-element {
-    display: flex;
-    flex: 1;
-    flex-direction: column;
-    gap: 0.5rem;
-    margin-bottom: 1rem;
-  }
-  
-  .form-element-label label {
-    font-weight: 700;
-  }
-  
-  .form-element-input * {
-    background-color: hsl(226, 64%, 66%);
-    border: none;
-    box-sizing: border-box;
-    font-size: 1rem;
-    height: 2rem;
-    outline: transparent;
-    padding: 0.5rem;
-    width: 100%;
-  }
-  
-  .form-element-input input[type="number"]::-webkit-outer-spin-button,
-  .form-element-input input[type="number"]::-webkit-inner-spin-button {
-    -webkit-appearance: none;
-    margin: 0;
-  }
-  
-  .form-element-input input[type="date"]::-webkit-calendar-picker-indicator,
-  .form-element-input input[type="time"]::-webkit-calendar-picker-indicator {
-    filter: invert(1);
-  }
-  
-  .form-element-input textarea{
-    height: 20vh;
-    resize: none;
-  }
+.menu-form-title {
+  margin-bottom: 3rem;
+}
 
-  /* not mine */
+.menu-form .form-row {
+  width: 100%;
+}
 
-  .menu {
-    background-color: transparent;
-    border: none;
-    cursor: pointer;
-    display: flex;
-    padding: 0;
-  }
+.filter {
+  align-items: center;
+  background-color: hsl(0, 0%, 100%);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-bottom: 2rem;
+  padding: 0.2rem 0;
+}
 
-  .menu:hover {
-    .line{
-      stroke-width: 8;
-    }
-  }
+.filter-button button svg {
+  width: 2rem;
+}
 
+.filter-button button svg path {
+  fill: hsl(207, 85%, 69%);
+}
+
+.filter-button button:hover svg path {
+  fill: hsl(34, 79%, 53%);
+}
+
+/* desplegable VVVVVVVV*/
+.filter-inputs{
+  width: 90%;
+  height: 0vh;
+  overflow: hidden;
+  transition: all 0.15s;
+  
+}
+
+.filter .filter-inputs .form-row .form-element .form-element-label label{
+  color:black;
+}
+
+.filter-inputs input{
+  width: 100%;
+}
+
+/* desplegable ^^^^^^^^^^^^ */
+.crud {
+  display: flex;
+  gap: 5%;
+  justify-content: space-between;
+}
+
+.table {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.table-buttons {
+  background-color: hsl(207, 85%, 69%);
+  display: flex;
+  gap: 0.5rem;
+  justify-content: flex-end;
+}
+
+.edit-button button svg,
+.delete-button button svg {
+  width: 2rem;
+}
+
+.edit-button button svg path,
+.delete-button button svg path {
+  fill: hsl(0, 0%, 100%);
+}
+
+.edit-button button:hover svg path,
+.delete-button button:hover svg path {
+  fill: hsl(34, 79%, 53%);
+}
+
+.table-data {
+  background-color: hsl(226, 64%, 66%);
+  padding: 0.5rem;
+}
+
+.table-data ul {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.table-data ul li span {
+  font-weight: 700;
+}
+
+.table-data ul li span::after {
+  content: ":";
+  margin-right: 0.5rem;
+}
+
+.form {
+  flex: 2;
+}
+
+.form-buttons {
+  background-color: hsl(0, 0%, 100%);
+  display: flex;
+  gap: 0.5rem;
+  padding-left: 1rem;
+  margin-bottom: 1rem;
+  padding-right: 0.5rem;
+}
+
+.form-buttons-main, .form-buttons-images{
+  display: flex;
+  align-items: center;
+}
+
+.form-buttons-change{
+  display: flex;
+  width: 50%;
+  gap:1rem;
+}
+
+.form-buttons-actions{
+  display: flex;
+  justify-content: flex-end;
+  width: 50%;
+}
+
+.form-clean-button button svg,
+.form-save-button button svg {
+  width: 2rem;
+}
+
+.form-clean-button button svg path,
+.form-save-button button svg path {
+  fill: hsl(207, 85%, 69%);
+}
+
+.form-clean-button button:hover svg path,
+.form-save-button button:hover svg path {
+  fill: hsl(34, 79%, 53%);
+}
+
+.form-row {
+  display: flex;
+  gap: 2rem;
+}
+
+.form-element {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.form-element-label label {
+  font-weight: 700;
+}
+
+.form-element-input * {
+  background-color: hsl(226, 64%, 66%);
+  border: none;
+  box-sizing: border-box;
+  font-size: 1rem;
+  height: 2rem;
+  outline: transparent;
+  padding: 0.5rem;
+  width: 100%;
+}
+
+.form-element-input input[type="number"]::-webkit-outer-spin-button,
+.form-element-input input[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.form-element-input input[type="date"]::-webkit-calendar-picker-indicator,
+.form-element-input input[type="time"]::-webkit-calendar-picker-indicator {
+  filter: invert(1);
+}
+
+.form-element-input textarea {
+  height: 20vh;
+  resize: none;
+}
+
+/* not mine */
+.menu {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  padding: 0;
+}
+
+.menu:hover {
   .line {
-    fill: none;
-    stroke: hsl(0, 0%, 100%);
-    stroke-width: 6;
-    transition: stroke-dasharray 400ms cubic-bezier(0.4, 0, 0.2, 1),
-      stroke-dashoffset 400ms cubic-bezier(0.4, 0, 0.2, 1);
+    stroke-width: 8;
   }
-  .line1 {
-    stroke-dasharray: 60 207;
-    stroke-width: 6;
-  }
-  .line2 {
-    stroke-dasharray: 60 60;
-    stroke-width: 6;
-  }
-  .line3 {
-    stroke-dasharray: 60 207;
-    stroke-width: 6;
-  }
-  .opened .line1 {
-    stroke-dasharray: 90 207;
-    stroke-dashoffset: -134;
-    stroke-width: 6;
-    stroke: hsl(0, 0%, 0%);
-  }
-  .opened .line2 {
-    stroke-dasharray: 1 60;
-    stroke-dashoffset: -30;
-    stroke-width: 6;
-    stroke: hsl(0, 0%, 0%);
-  }
-  .opened .line3 {
-    stroke-dasharray: 90 207;
-    stroke-dashoffset: -134;
-    stroke-width: 6;
-    stroke: hsl(0, 0%, 0%);
-  }
+}
 
-  /* not mine */
-  
+.line {
+  fill: none;
+  stroke: hsl(0, 0%, 100%);
+  stroke-width: 6;
+
+  transition: stroke-dasharray 400ms cubic-bezier(0.4, 0, 0.2, 1),
+    stroke-dashoffset 400ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.line1 {
+  stroke-dasharray: 60 207;
+  stroke-width: 6;
+}
+
+.line2 {
+  stroke-dasharray: 60 60;
+  stroke-width: 6;
+}
+
+.line3 {
+  stroke-dasharray: 60 207;
+  stroke-width: 6;
+}
+
+.opened .line1 {
+  stroke: hsl(0, 0%, 0%);
+  stroke-dasharray: 90 207;
+  stroke-dashoffset: -134;
+  stroke-width: 6;
+}
+
+.opened .line2 {
+  stroke: hsl(0, 0%, 0%);
+  stroke-dasharray: 1 60;
+  stroke-dashoffset: -30;
+  stroke-width: 6;
+}
+
+.opened .line3 {
+  stroke: hsl(0, 0%, 0%);
+  stroke-dasharray: 90 207;
+  stroke-dashoffset: -134;
+  stroke-width: 6;
+}
+
+
+/* not mine */
+.block{
+  /* display:block; */
+  height: 10vh;
+}
