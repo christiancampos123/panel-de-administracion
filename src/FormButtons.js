@@ -1,13 +1,13 @@
 export default (() => {
     // boton de save
-    let buttonSave = document.querySelector(".form-save-button");
+    const buttonSave = document.querySelector(".form-save-button");
 
     buttonSave?.addEventListener("click", () => {
         alert("HAS PULSADO GUARDAR");
     });
 
     // boton de clean
-    let buttonBroom = document.querySelector(".form-clean-button");
+    const buttonBroom = document.querySelector(".form-clean-button");
 
     buttonBroom?.addEventListener("click", () => {
         alert("HAS PULSADO LIMPIAR");
@@ -15,17 +15,20 @@ export default (() => {
 
 
     // array de nodos
-    let sections = Array.from(document.querySelectorAll(".form section"));
-    let mainButton = document.querySelector(".form-buttons-main");
-    let imagesButton = document.querySelector(".form-buttons-images");
+    const sections = Array.from(document.querySelectorAll(".form section"));
+    // form-buttons-change
 
-    mainButton?.addEventListener("click", () => {
-        displaySection(0);
-    });
+    // const mainButton = document.querySelector(".form-buttons-main");
+    // const imagesButton = document.querySelector(".form-buttons-images");
 
-    imagesButton?.addEventListener("click", () => {
-        displaySection(1);
+    const buttons = Array.from(document.querySelectorAll('.form-buttons-change > div > button'));
+
+    buttons.forEach((button, index) =>{
+        button?.addEventListener("click", () => { 
+            displaySection(index);
+        });
     });
+    
 
     // la array se recorre a si misma
     function displaySection(indexDisplay) {

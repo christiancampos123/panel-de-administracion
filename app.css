@@ -3,6 +3,13 @@
   padding: 0;
 }
 
+/* 
+html {
+   BY DEFAULT 1REM 16PX 
+   After that line 1rem is 10px
+  font-size: 62.5%;
+} */
+
 .none {
   display: none;
 }
@@ -122,6 +129,7 @@ header {
   stroke-dashoffset: -134;
   stroke-width: 6;
 }
+
 /* Animacion svg ^^^^^^^^^^^^ */
 /* Menu desplegable Hamburger  vvvvvvvvvvvvvv */
 .full-menu {
@@ -152,6 +160,7 @@ header {
   box-sizing: border-box;
   z-index: 1;
 }
+
 /* Menu desplegable Hamburger ^^^^^^^^^^^^*/
 
 .menu-form {
@@ -200,13 +209,15 @@ header {
 
 }
 
-.filter-inputs label {
+.filter-inputs 
+label {
   color: black;
 }
 
 .filter-inputs input {
   width: 100%;
 }
+
 /* desplegable ^^^^^^^^^^^^ */
 
 .crud {
@@ -276,21 +287,18 @@ header {
   padding-right: 0.5rem;
 }
 
-.form-buttons-main,
-.form-buttons-images {
+.form-buttons-change>div {
   display: flex;
   align-items: center;
   background-color: hsl(0, 0%, 69%);
 }
 
-.form-buttons-main:hover,
-.form-buttons-images :hover {
-  background-color: hsl(34, 79%, 53%);
 
+.form-buttons-change>div>button:hover {
+   background-color: hsl(34, 79%, 53%); 
 }
 
-.form-buttons-main button,
-.form-buttons-images button {
+.form-buttons-change>div>button {
   height: 100%;
   width: 5rem;
 }
@@ -321,6 +329,7 @@ header {
 .form-save-button button:hover svg path {
   fill: hsl(34, 79%, 53%);
 }
+
 /* principal button */
 .form-row {
   display: flex;
@@ -390,11 +399,11 @@ header {
   color: #999;
 }
 
-.images-TODO{
-  display:flex;
+.images-TODO {
+  display: flex;
   justify-content: flex-start;
   flex-wrap: wrap;
-  gap:1rem;
+  gap: 1rem;
 }
 
 .modal {
