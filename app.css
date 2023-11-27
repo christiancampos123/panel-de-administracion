@@ -3,9 +3,9 @@
   padding: 0;
 }
 
-section{
-  margin:0;
-  padding:0;
+section {
+  margin: 0;
+  padding: 0;
 }
 
 /* 
@@ -206,8 +206,8 @@ header {
 }
 
 /* mdoal filtro VVVVVVVV*/
-.filter-modal{
-  display:none;
+.filter-modal {
+  display: none;
 }
 
 .filter-modal-active {
@@ -223,34 +223,47 @@ header {
 }
 
 .filter-modal-form {
-  position:fixed;
+  border: solid;
+  border-color: white;
+  box-shadow: 0.25rem 0.25rem 0.5rem rgb(255, 255, 255);
+  position: fixed;
   display: flex;
   flex-direction: column;
   opacity: 1;
   width: 20%;
-  background-color: white;
-  padding: 20px;
+  background-color: hsl(226, 63%, 45%);
+  padding: 2rem 2rem;
 }
 
-.filter-modal-form label {
-  color:black;
+.filter-modal-form-title {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 2rem;
 }
 
-.filter-inside-buttons{
+.filter-inside-buttons {
   display: flex;
   justify-content: center;
   align-items: center;
   width: 100%;
-  gap:2rem;
+  gap: 2rem;
 }
 
-.filter-inside-buttons>button{
+.filter-inside-buttons>button {
   display: flex;
   justify-content: center;
-  padding:0.5rem;
+  padding: 0.5rem;
   width: 100%;
-  background-color: red;
 }
+
+.filter-inside-buttons-accept {
+  background-color: #02A8B1;
+}
+
+.filter-inside-buttons-decline {
+  background-color: #D74242;
+}
+
 /* modal filtro ^^^^^^^^^^^^ */
 
 .crud {
@@ -287,6 +300,59 @@ header {
 .delete-button button:hover svg path {
   fill: hsl(34, 79%, 53%);
 }
+
+/* modal de delete VVVVVVVV */
+.modal-delete {
+  display: none;
+}
+
+.modal-delete-active {
+  position: fixed;
+  z-index: 3;
+  height: 100vh;
+  width: 100%;
+  top: 0;
+  left: 0;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+}
+
+.modal-delete-box {
+  border: solid;
+  border-color: white;
+  background-color: hsl(226, 63%, 45%);
+  padding: 1rem;
+  box-shadow: 0.25rem 0.25rem 0.5rem rgb(255, 255, 255);
+}
+
+.modal-delete-box-label {
+  padding: 2rem 6rem;
+
+}
+
+.modal-delete-box-buttons {
+  display: flex;
+  width: 100%;
+  gap: 2rem;
+}
+
+.modal-delete-box-buttons button {
+  width: 100%;
+  padding: 0.7rem 0;
+}
+
+.modal-delete-box-buttons-accept {
+  background-color: #02A8B1;
+}
+
+.modal-delete-box-buttons-decline {
+  background-color: #D74242;
+}
+
+
+
+/* modal de delete ^^^^^^^^^^ */
 
 .table-data {
   background-color: hsl(226, 64%, 66%);
@@ -328,7 +394,7 @@ header {
 
 
 .form-buttons-change>div>button:hover {
-   background-color: hsl(34, 79%, 53%); 
+  background-color: hsl(34, 79%, 53%);
 }
 
 .form-buttons-change>div>button {
@@ -461,7 +527,7 @@ header {
   display: block;
 }
 
-.background-block-active{
+.background-block-active {
   position: absolute;
   left: 0;
   top: 0;
