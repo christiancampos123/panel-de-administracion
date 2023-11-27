@@ -16,11 +16,6 @@ export default (() => {
 
     // array de nodos
     const sections = Array.from(document.querySelectorAll(".form section"));
-    // form-buttons-change
-
-    // const mainButton = document.querySelector(".form-buttons-main");
-    // const imagesButton = document.querySelector(".form-buttons-images");
-
     const buttons = Array.from(document.querySelectorAll('.form-buttons-change > div > button'));
 
     buttons.forEach((button, index) =>{

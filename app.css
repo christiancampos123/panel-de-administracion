@@ -3,6 +3,11 @@
   padding: 0;
 }
 
+section{
+  margin:0;
+  padding:0;
+}
+
 /* 
 html {
    BY DEFAULT 1REM 16PX 
@@ -148,7 +153,7 @@ header {
   box-sizing: border-box;
 }
 
-.full-menu div {
+.full-menu>div {
   overflow: hidden;
 }
 
@@ -200,25 +205,53 @@ header {
   fill: hsl(34, 79%, 53%);
 }
 
-/* desplegable filtro VVVVVVVV*/
-.filter-inputs {
-  width: 90%;
-  height: 0vh;
-  overflow: hidden;
-  transition: all 0.15s;
-
+/* mdoal filtro VVVVVVVV*/
+.filter-modal{
+  display:none;
 }
 
-.filter-inputs 
-label {
-  color: black;
-}
-
-.filter-inputs input {
+.filter-modal-active {
+  position: absolute;
+  left: 0;
+  top: 0;
   width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 3;
 }
 
-/* desplegable ^^^^^^^^^^^^ */
+.filter-modal-form {
+  position:fixed;
+  display: flex;
+  flex-direction: column;
+  opacity: 1;
+  width: 20%;
+  background-color: white;
+  padding: 20px;
+}
+
+.filter-modal-form label {
+  color:black;
+}
+
+.filter-inside-buttons{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  gap:2rem;
+}
+
+.filter-inside-buttons>button{
+  display: flex;
+  justify-content: center;
+  padding:0.5rem;
+  width: 100%;
+  background-color: red;
+}
+/* modal filtro ^^^^^^^^^^^^ */
 
 .crud {
   display: flex;
@@ -426,4 +459,18 @@ label {
 
 .display {
   display: block;
+}
+
+.background-block-active{
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: grey;
+  opacity: 0.5;
+  z-index: 2;
 }

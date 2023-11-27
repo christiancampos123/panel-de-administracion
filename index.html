@@ -21,6 +21,9 @@
 </head>
 
 <body>
+  <div class="background-block">
+
+  </div>
 
   <header>
     <div class="top-bar-title">
@@ -107,43 +110,63 @@
 
   </header>
   <main>
-    <section class="filter">
-      <div class="filter-button">
-        <button>
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-            <title>filter-menu</title>
-            <path
-              d="M11 11L16.76 3.62A1 1 0 0 0 16.59 2.22A1 1 0 0 0 16 2H2A1 1 0 0 0 1.38 2.22A1 1 0 0 0 1.21 3.62L7 11V16.87A1 1 0 0 0 7.29 17.7L9.29 19.7A1 1 0 0 0 10.7 19.7A1 1 0 0 0 11 18.87V11M13 16L18 21L23 16Z" />
-          </svg>
-        </button>
-      </div>
-      <div class="filter-inputs">
-        <div class="form-row">
-          <div class="form-element">
-            <div class="form-element-label">
-              <label for="name">
-                Nombre
-              </label>
-            </div>
-            <div class="form-element-input">
-              <input type="text">
-            </div>
-          </div>
-          <div class="form-element">
-            <div class="form-element-label">
-              <label for="email">
-                Email
-              </label>
-            </div>
-            <div class="form-element-input">
-              <input type="email">
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
     <div class="crud">
       <section class="table">
+
+
+
+        <section class="filter">
+          <div class="filter-button">
+            <button>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                <title>filter-menu</title>
+                <path
+                  d="M11 11L16.76 3.62A1 1 0 0 0 16.59 2.22A1 1 0 0 0 16 2H2A1 1 0 0 0 1.38 2.22A1 1 0 0 0 1.21 3.62L7 11V16.87A1 1 0 0 0 7.29 17.7L9.29 19.7A1 1 0 0 0 10.7 19.7A1 1 0 0 0 11 18.87V11M13 16L18 21L23 16Z" />
+              </svg>
+            </button>
+          </div>
+        </section>
+
+        <!-- ventana modal del filtro -->
+        <section class="filter-modal">
+          <div class="filter-modal-form">
+            <!-- form inside -->
+            <div class="form-row">
+              <div class="form-element">
+                <div class="form-element-label">
+                  <label for="email">
+                    Nombre
+                  </label>
+                </div>
+                <div class="form-element-input">
+                  <input type="email">
+                </div>
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="form-element">
+                <div class="form-element-label">
+                  <label for="email">
+                    mail
+                  </label>
+                </div>
+                <div class="form-element-input">
+                  <input type="email">
+                </div>
+              </div>
+            </div>
+
+            <section class="filter-inside-buttons">
+              <button class="filter-inside-buttons-accept">bot1</button>
+              <button class="filter-inside-buttons-decline">bot2</button>
+            </section>
+
+          </div>
+        </section>
+
+
+
+
         <article class="table-record">
           <div class="table-buttons">
             <div class="edit-button">
@@ -169,6 +192,40 @@
             </ul>
           </div>
         </article>
+
+
+
+
+
+
+
+
+
+        <section class="modal-delete">
+          <div class="modal-delete-label">
+            desea eliminar?
+          </div>
+          <div class="modal-delete-buttons">
+            <button class="modal-delete-buttons-accept">
+              aceptar
+            </button>
+            <button class="modal-delete-buttons-decline">
+              cancelar
+            </button>
+          </div>
+        </section>
+
+
+
+
+
+
+
+
+
+
+
+
         <article class="table-record">
           <div class="table-buttons">
             <div class="edit-button">
@@ -285,6 +342,7 @@
             </div>
           </div>
         </div>
+        <!-- seccion main index 0 -->
         <section class="form-main">
           <form>
             <div class="form-row">
@@ -333,6 +391,7 @@
             </div>
           </form>
         </section>
+        <!-- section images index 1 -->
         <section class="images">
           <div class="images-TODO">
             <div class="image-placeholder">1</div>

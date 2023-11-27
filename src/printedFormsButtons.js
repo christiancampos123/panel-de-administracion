@@ -1,6 +1,6 @@
 export default (() => {
 
-    let buttonEdit= document.querySelector(".edit-button");
+    const buttonEdit = document.querySelector(".edit-button");
 
     if (buttonEdit) {
         buttonEdit.addEventListener("click", () => {
@@ -8,13 +8,13 @@ export default (() => {
         });
     }
 
-    
-    let buttonDelete= document.querySelector(".delete-button");
 
-    if (buttonDelete) {
-        buttonDelete.addEventListener("click", () => {
-            alert("HAS PULSADO ELIMINAR");
-        });
-    }
+    const buttonDelete = document.querySelector(".delete-button");
+
+
+    buttonDelete?.addEventListener("click", () => {
+        alert("HAS PULSADO ELIMINAR");
+    });
+
 
 })();
