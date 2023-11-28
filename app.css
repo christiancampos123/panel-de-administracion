@@ -8,13 +8,6 @@ section {
   padding: 0;
 }
 
-/* 
-html {
-   BY DEFAULT 1REM 16PX 
-   After that line 1rem is 10px
-  font-size: 62.5%;
-} */
-
 .none {
   display: none;
 }

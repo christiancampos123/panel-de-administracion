@@ -14,6 +14,8 @@ export default (() => {
     });
 
 
+
+    // Pestañas de navegación
     // array de nodos
     const sections = Array.from(document.querySelectorAll(".form section"));
     const buttons = Array.from(document.querySelectorAll('.form-buttons-change > div > button'));
@@ -37,5 +39,6 @@ export default (() => {
             }
         })
     }
+
 
 })();
