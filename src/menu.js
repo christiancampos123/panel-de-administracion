@@ -11,12 +11,12 @@ export default (() => {
     let boton = document.querySelector(".top-bar-hamburguer");
     let svg = document.querySelector(".menu");
     let main = document.querySelector("main");
-    if (boton) {
-        boton.addEventListener("click", () => {
-            menu.classList.toggle("full-menu-active");
-            boton.classList.toggle("top-bar-hamburguer-active");
-            svg.classList.toggle("opened");
-            main.classList.toggle("none");
-        });
-    }
+
+    boton?.addEventListener("click", () => {
+        menu.classList.toggle("full-menu-active");
+        boton.classList.toggle("top-bar-hamburguer-active");
+        svg.classList.toggle("opened");
+        main.classList.toggle("none");
+    });
+
 })();

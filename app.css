@@ -242,13 +242,6 @@ header {
   gap: 2rem;
 }
 
-.filter-inside-buttons>button {
-  display: flex;
-  justify-content: center;
-  padding: 0.5rem;
-  width: 100%;
-}
-
 .filter-inside-buttons-accept {
   background-color: #02A8B1;
 }
@@ -330,9 +323,11 @@ header {
   gap: 2rem;
 }
 
-.modal-delete-box-buttons button {
+.modal-buttons{
+  display: flex;
+  justify-content: center;
+  padding: 0.7rem;
   width: 100%;
-  padding: 0.7rem 0;
 }
 
 .modal-delete-box-buttons-accept {
