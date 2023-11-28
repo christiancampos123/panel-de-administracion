@@ -15,14 +15,51 @@ export default (() => {
 
 
 
+
+
+
+
+
+
+
+    // const tabsSection = document.querySelector('.form');
+
+    // tabsSection?.addEventListener('click', async (event) => {
+    //     if (event.target.closest('.form-buttons-main')) {
+    //         document.querySelector("form-buttons-main").classList.add("form-button-active");
+    //     }
+
+    // });
     // Pestañas de navegación
     // array de nodos
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     const sections = Array.from(document.querySelectorAll(".form section"));
     const buttons = Array.from(document.querySelectorAll('.form-buttons-change > div > button'));
 
     buttons.forEach((button, index) =>{
         button?.addEventListener("click", () => { 
+            buttons.forEach((button, index) =>{
+                buttons[index].classList.remove("form-button-active");
+            });
             displaySection(index);
+            console.log(buttons[index]);
+            buttons[index].classList.add("form-button-active");
         });
     });
     

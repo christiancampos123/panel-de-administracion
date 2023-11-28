@@ -18,21 +18,6 @@ export default (() => {
             background.classList.add("background-block-active");
             deleteModal.classList.add("modal-delete-active");
             
-            // Delete Modal
-            const acceptButton = document.querySelector(".modal-delete-box-buttons-accept");
-            const cancelButton = document.querySelector(".modal-delete-box-buttons-decline");
-
-            acceptButton?.addEventListener("click", () => {
-                background.classList.remove("background-block-active");
-                deleteModal.classList.remove("modal-delete-active");
-            });
-
-            cancelButton?.addEventListener("click", () => {
-                background.classList.remove("background-block-active");
-                deleteModal.classList.remove("modal-delete-active");
-            });
-
-
 
         }
     });
