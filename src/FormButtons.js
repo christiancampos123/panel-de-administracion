@@ -34,6 +34,30 @@ export default (() => {
     // array de nodos
 
 
+    const buttonContainer = document.querySelector('.form-buttons-change');
+
+    buttonContainer?.addEventListener('click', (event) => {
+
+        if (event.target.tagName === 'BUTTON') {
+            // localizo al padre
+            let padre = event.target.closest('.form-buttons-change');
+            let activo = padre.querySelector(".form-button-active");
+            // se lo quito al hijo que lo tiene
+            activo.classList.remove("form-button-active");
+            // se lo doy al pulsado
+            event.target.classList.add('form-button-active');
+    
+        }
+    });
+
+
+
+
+
+
+
+
+
 
 
 
@@ -43,22 +67,9 @@ export default (() => {
     const sections = Array.from(document.querySelectorAll(".form section"));
     const buttons = Array.from(document.querySelectorAll('.form-buttons-change > div > button'));
 
-    console.log(buttons);
-
     buttons.forEach((button, index) => {
         button?.addEventListener("click", () => {
-            // buttons.forEach((button, index) =>{
-            //     buttons[index].classList.remove("form-button-active");
-            // });
-            
-            buttons.forEach(function (buttons) {
-                buttons.classList.remove('form-button-active');
-            });
-
-
             displaySection(index);
-            console.log(buttons[index]);
-            buttons[index].classList.add("form-button-active");
         });
     });
 
