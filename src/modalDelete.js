@@ -6,6 +6,11 @@ export default (() => {
     const background = document.querySelector(".background-block");
     const deleteModal = document.querySelector(".modal-delete");
 
+    document.addEventListener("showDeleteModal", (event => {
+        background.classList.add("background-block-active");
+        deleteModal.classList.add("modal-delete-active");
+    }));
+
     acceptButton?.addEventListener("click", () => {
         background.classList.remove("background-block-active");
         deleteModal.classList.remove("modal-delete-active");

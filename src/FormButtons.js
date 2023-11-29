@@ -40,34 +40,33 @@ export default (() => {
 
 
 
-
-
-
-
-
-
-
-
-
     const sections = Array.from(document.querySelectorAll(".form section"));
     const buttons = Array.from(document.querySelectorAll('.form-buttons-change > div > button'));
 
-    buttons.forEach((button, index) =>{
-        button?.addEventListener("click", () => { 
-            buttons.forEach((button, index) =>{
-                buttons[index].classList.remove("form-button-active");
+    console.log(buttons);
+
+    buttons.forEach((button, index) => {
+        button?.addEventListener("click", () => {
+            // buttons.forEach((button, index) =>{
+            //     buttons[index].classList.remove("form-button-active");
+            // });
+            
+            buttons.forEach(function (buttons) {
+                buttons.classList.remove('form-button-active');
             });
+
+
             displaySection(index);
             console.log(buttons[index]);
             buttons[index].classList.add("form-button-active");
         });
     });
-    
+
 
     // la array se recorre a si misma
     function displaySection(indexDisplay) {
-        sections.forEach((element,index)=>{
-            if(indexDisplay===index){
+        sections.forEach((element, index) => {
+            if (indexDisplay === index) {
                 element.classList.add("display");
                 element.classList.remove("none");
             } else {

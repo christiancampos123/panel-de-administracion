@@ -12,11 +12,15 @@ export default (() => {
             // alert("has pulsado delete");
 
             //Delete button
-            const background = document.querySelector(".background-block");
-            const deleteModal = document.querySelector(".modal-delete");
+            // const background = document.querySelector(".background-block");
+            // const deleteModal = document.querySelector(".modal-delete");
             
-            background.classList.add("background-block-active");
-            deleteModal.classList.add("modal-delete-active");
+            // background.classList.add("background-block-active");
+            // deleteModal.classList.add("modal-delete-active");
+
+            document.dispatchEvent(new CustomEvent('showDeleteModal', {
+
+            }));
             
 
         }

@@ -4,3 +4,4 @@ import './table.js';
 import './formButtons.js';
 import './image.js';
 import './modalDelete.js';
+import './modalFilter.js'
