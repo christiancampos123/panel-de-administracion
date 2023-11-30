@@ -53,6 +53,7 @@ export default (() => {
             form.querySelector(".display").classList.remove("display");
             let selector = `[data-tab="${tabDataSet}"]`;
             form.querySelector(".data-tabs").querySelector(selector).classList.add("display");
+        
         }
     });
 

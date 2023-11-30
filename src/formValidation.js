@@ -26,9 +26,42 @@ export default (() => {
                     input.classList.remove("border-red");
                 }
             }
-            if(input){
-                let letters= input.dataset.onlyletters;
+
+            if (input) {
+                let letters = input.dataset.onlyletters;
                 console.log(letters);
+                if (letters) {
+                    let expresionRegular = /^[a-zA-Z]+$/;
+                    console.log(input.value);
+                    expresionRegular.test(input.value)
+                    console.log(expresionRegular.test(input.value));
+                    if(expresionRegular.test(input.value)){
+                        input.classList.remove("border-red"); 
+                    }else{
+                        input.classList.add("border-red");
+                    }
+                    if(input.value.length == 0){
+                        input.classList.remove("border-red");
+                    }
+                }
+            }
+
+            if (input) {
+                let mail = input.dataset.mail;
+                if (mail) {
+                    let expresionRegular = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                    console.log(input.value);
+                    expresionRegular.test(input.value)
+                    console.log(expresionRegular.test(input.value));
+                    if(expresionRegular.test(input.value)){
+                        input.classList.remove("border-red"); 
+                    }else{
+                        input.classList.add("border-red");
+                    }
+                    if(input.value.length == 0){
+                        input.classList.remove("border-red");
+                    }
+                }
             }
         }
     });
