@@ -515,6 +515,10 @@ header {
   height: 10vh;
 }
 
+.border-red{
+  border: 1px solid red;
+}
+
 .tab-content{
   display:none;
 }

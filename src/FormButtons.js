@@ -46,14 +46,12 @@ export default (() => {
             active.classList.remove("form-button-active");
             // se lo doy al pulsado
             event.target.classList.add('form-button-active');
-
-
             const tabDataSet = event.target.dataset.tab;
             //console.log(tabDataSet);
             const form = active.closest(".form");
             //console.log(form.querySelector(".display"));
             form.querySelector(".display").classList.remove("display");
-            var selector = '[data-tab="' + tabDataSet + '"]';
+            let selector = `[data-tab="${tabDataSet}"]`;
             form.querySelector(".data-tabs").querySelector(selector).classList.add("display");
         }
     });

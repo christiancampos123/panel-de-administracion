@@ -306,6 +306,7 @@
       <section class="form">
         <div class="form-buttons">
           <div class="form-buttons-change">
+            <!-- cambiar tanta clase anidada, no es necesario -->
             <div class="form-buttons-main">
               <button class="form-button-active" data-tab="tab-main">
                 Principal
@@ -314,6 +315,11 @@
             <div class="form-buttons-images">
               <button data-tab="tab-images">
                 Imagenes
+              </button>
+            </div>
+            <div class="form-buttons-git">
+              <button data-tab="tab-git">
+                GIT
               </button>
             </div>
           </div>
@@ -360,7 +366,7 @@
                   </label>
                 </div>
                 <div class="form-element-input">
-                  <input type="email">
+                  <input type="email" class="validate" data-onlyletters=true>
                 </div>
               </div>
             </div>
@@ -372,17 +378,17 @@
                   </label>
                 </div>
                 <div class="form-element-input">
-                  <input type="password">
+                  <input type="password" class="validate" data-minlength=8>
                 </div>
               </div>
               <div class="form-element">
                 <div class="form-element-label">
-                  <label for="confirmar-password">
+                  <label for="confirmar-password" class="validate" data-minlength=15>
                     Repetir contraseña
                   </label>
                 </div>
                 <div class="form-element-input">
-                  <input type="password">
+                  <input type="password" class="validate" data-minlength=18>
                 </div>
               </div>
             </div>
@@ -396,6 +402,13 @@
               <div class="image-placeholder">3</div>
               <div class="image-placeholder">4</div>
               <div class="image-placeholder">5</div>
+            </div>
+          </section>
+          <section class="tab-content images" data-tab="tab-git">
+            <div class="images-TODO">
+              <div class="image-placeholder">1</div>
+              <div class="image-placeholder">2</div>
+              <div class="image-placeholder">3</div>
             </div>
           </section>
         </div>
