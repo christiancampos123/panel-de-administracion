@@ -515,6 +515,10 @@ header {
   height: 10vh;
 }
 
+.tab-content{
+  display:none;
+}
+
 .display {
   display: block;
 }

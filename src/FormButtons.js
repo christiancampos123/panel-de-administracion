@@ -40,13 +40,21 @@ export default (() => {
 
         if (event.target.tagName === 'BUTTON') {
             // localizo al padre
-            let padre = event.target.closest('.form-buttons-change');
-            let activo = padre.querySelector(".form-button-active");
+            let father = event.target.closest('.form-buttons-change');
+            let active = father.querySelector(".form-button-active");
             // se lo quito al hijo que lo tiene
-            activo.classList.remove("form-button-active");
+            active.classList.remove("form-button-active");
             // se lo doy al pulsado
             event.target.classList.add('form-button-active');
-    
+
+
+            const tabDataSet = event.target.dataset.tab;
+            //console.log(tabDataSet);
+            const form = active.closest(".form");
+            //console.log(form.querySelector(".display"));
+            form.querySelector(".display").classList.remove("display");
+            var selector = '[data-tab="' + tabDataSet + '"]';
+            form.querySelector(".data-tabs").querySelector(selector).classList.add("display");
         }
     });
 
@@ -64,28 +72,30 @@ export default (() => {
 
 
 
-    const sections = Array.from(document.querySelectorAll(".form section"));
-    const buttons = Array.from(document.querySelectorAll('.form-buttons-change > div > button'));
+    // const sections = Array.from(document.querySelectorAll(".form section"));
+    // const buttons = Array.from(document.querySelectorAll('.form-buttons-change > div > button'));
 
-    buttons.forEach((button, index) => {
-        button?.addEventListener("click", () => {
-            displaySection(index);
-        });
-    });
+    // buttons.forEach((button, index) => {
+    //     button?.addEventListener("click", () => {
+    //         displaySection(index);
+    //     });
+    // });
 
 
     // la array se recorre a si misma
-    function displaySection(indexDisplay) {
-        sections.forEach((element, index) => {
-            if (indexDisplay === index) {
-                element.classList.add("display");
-                element.classList.remove("none");
-            } else {
-                element.classList.add("none");
-                element.classList.remove("display");
-            }
-        })
-    }
+
+
+    // function displaySection(indexDisplay) {
+    //     sections.forEach((element, index) => {
+    //         if (indexDisplay === index) {
+    //             element.classList.add("display");
+    //             element.classList.remove("none");
+    //         } else {
+    //             element.classList.add("none");
+    //             element.classList.remove("display");
+    //         }
+    //     })
+    // }
 
 
 })();
