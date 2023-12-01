@@ -6,3 +6,5 @@ import './image.js';
 import './modalDelete.js';
 import './modalFilter.js'
 import './formValidation.js'
+import './title.js'
+import './menuHamburguerButton.js'
