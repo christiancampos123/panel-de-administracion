@@ -137,31 +137,30 @@ p {
 .full-menu {
   background-color: rgb(84, 61, 218);
   display: flex;
-  height: 0;
+  height: 100vh;
+  top: -100vh; /* Menú oculto arriba del viewport */
   justify-content: center;
   left: 0;
-  margin: 0 0;
+  margin: 0;
   overflow: hidden;
-  position: absolute;
-  top: 0;
-  transition: all 0.25s;
+  position: fixed;
+  transition: top 0.5s; /* Añadir transición a la propiedad top */
   width: 100%;
   z-index: 0;
   box-sizing: border-box;
 }
 
-.full-menu>div {
-  overflow: hidden;
-}
-
 .full-menu-active {
   display: flex;
+  position: fixed;
   height: 100vh;
   justify-content: center;
   padding-top: 2rem;
   box-sizing: border-box;
-  z-index: 1;
+  z-index: 0;
+  top: 0; /* Menú visible en la parte superior del viewport */
 }
+
 
 /* Menu desplegable Hamburger ^^^^^^^^^^^^*/
 
