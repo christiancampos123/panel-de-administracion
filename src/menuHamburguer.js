@@ -3,7 +3,6 @@ class Menu extends HTMLElement {
   constructor() {
     super()
     this.shadow = this.attachShadow({ mode: 'open' })
-    this.title = this.getAttribute('title')
   }
 
   connectedCallback() {
@@ -16,15 +15,59 @@ class Menu extends HTMLElement {
       /*html*/
       `
       <style>
-        h1{
-          color: hsl(0, 0%, 100%);
-          font-family: 'Roboto', sans-serif;
-          margin: 0;
-          padding: 0;
-        }
-        /* boton menu y menu oculto */
+        * {
+  margin: 0;
+  padding: 0;
+}
+
+section {
+  margin: 0;
+  padding: 0;
+}
+
+.none {
+  display: none;
+}
+
+button {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+a {
+  text-decoration: none;
+}
+
+ul {
+  list-style: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: hsl(0, 0%, 100%);
+  font-family: 'Roboto', sans-serif;
+}
+
+input,
+label,
+select,
+textarea,
+li,
+span,
+p {
+  color: hsl(0, 0%, 100%);
+  font-family: 'Roboto', sans-serif;
+}
+
+/* boton menu y menu oculto */
 .top-bar-hamburguer {
   z-index: 2;
+  position: relative;
 }
 
 .top-bar-hamburguer button svg {
@@ -90,7 +133,6 @@ class Menu extends HTMLElement {
   stroke-width: 6;
 }
 
-/* Animacion svg ^^^^^^^^^^^^ */
 /* Menu desplegable Hamburger  vvvvvvvvvvvvvv */
 .full-menu {
   background-color: rgb(84, 61, 218);
@@ -137,8 +179,76 @@ class Menu extends HTMLElement {
 .menu-form .form-row {
   width: 100%;
 }
+.form {
+  flex: 2;
+}
+.form-row {
+  display: flex;
+  gap: 2rem;
+}
+
+.form-element {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.form-element-label label {
+  font-weight: 700;
+}
+
+.form-element-input * {
+  background-color: hsl(226, 64%, 66%);
+  border: none;
+  box-sizing: border-box;
+  font-size: 1rem;
+  height: 2rem;
+  outline: transparent;
+  padding: 0.5rem;
+  width: 100%;
+}
+
+.form-element-input input[type="number"]::-webkit-outer-spin-button,
+.form-element-input input[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.form-element-input input[type="date"]::-webkit-calendar-picker-indicator,
+.form-element-input input[type="time"]::-webkit-calendar-picker-indicator {
+  filter: invert(1);
+}
+
+.form-element-input textarea {
+  height: 20vh;
+  resize: none;
+}
+
+.block {
+  height: 10vh;
+}
+
+.border-red{
+  border: 1px solid red;
+}
+
+.tab-content{
+  display:none;
+}
+
+.display {
+  display: block;
+}
+
+.top-bar-hamburguer-active {
+  z-index: 6;
+}
       </style>
-  
+      <div class="background-block">
+
+      </div>
     <!-- Boton de hamburguesa -->
     <div class="top-bar-hamburguer">
       <button class="menu">
@@ -219,18 +329,16 @@ class Menu extends HTMLElement {
       `
     let menu = this.shadow.querySelector(".full-menu");
     let boton = this.shadow.querySelector(".top-bar-hamburguer");
-    let svg = this.hadow.querySelector(".menu");
+    let svg = this.shadow.querySelector(".menu");
     let main = this.shadow.querySelector("main");
 
     boton?.addEventListener("click", () => {
       menu.classList.toggle("full-menu-active");
       boton.classList.toggle("top-bar-hamburguer-active");
       svg.classList.toggle("opened");
-      main.classList.toggle("none");
     });
 
   }
-
 
 
 }

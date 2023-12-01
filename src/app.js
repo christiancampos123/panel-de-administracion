@@ -1,4 +1,3 @@
-import './menu.js';
 import './filter.js';
 import './table.js';
 import './formButtons.js';
@@ -7,4 +6,4 @@ import './modalDelete.js';
 import './modalFilter.js'
 import './formValidation.js'
 import './title.js'
-import './menuHamburguerButton.js'
+import './menuHamburguer.js'
