@@ -152,6 +152,7 @@ p {
   box-sizing: border-box;
 }
 
+
 .full-menu-active {
   opacity:1;
   display: flex;
