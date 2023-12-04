@@ -333,7 +333,6 @@ p {
     let menu = this.shadow.querySelector(".full-menu");
     let boton = this.shadow.querySelector(".top-bar-hamburguer");
     let svg = this.shadow.querySelector(".menu");
-    let main = this.shadow.querySelector("main");
 
     boton?.addEventListener("click", () => {
       menu.classList.toggle("full-menu-active");
