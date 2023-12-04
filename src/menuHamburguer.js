@@ -136,21 +136,24 @@ p {
 /* Menu desplegable Hamburger  vvvvvvvvvvvvvv */
 .full-menu {
   background-color: rgb(84, 61, 218);
-  display: flex;
   height: 100vh;
   top: -100vh; /* Menú oculto arriba del viewport */
+  display:flex;
+  opacity:0;
   justify-content: center;
   left: 0;
   margin: 0;
   overflow: hidden;
   position: fixed;
-  transition: top 0.5s; /* Añadir transición a la propiedad top */
+  transition: top 0.3s, opacity 0.3s;
+ /* Añadir transición a la propiedad top */
   width: 100%;
   z-index: 0;
   box-sizing: border-box;
 }
 
 .full-menu-active {
+  opacity:1;
   display: flex;
   position: fixed;
   height: 100vh;
