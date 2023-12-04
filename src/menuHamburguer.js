@@ -146,7 +146,6 @@ p {
   overflow: hidden;
   position: fixed;
   transition: top 0.3s, opacity 0.3s;
- /* Añadir transición a la propiedad top */
   width: 100%;
   z-index: 0;
   box-sizing: border-box;
