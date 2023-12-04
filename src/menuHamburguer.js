@@ -162,6 +162,7 @@ p {
   box-sizing: border-box;
   z-index: 0;
   top: 0; /* Menú visible en la parte superior del viewport */
+  
 }
 
 
