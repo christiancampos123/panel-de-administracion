@@ -1,253 +1,253 @@
 class Menu extends HTMLElement {
 
-  constructor() {
-    super()
-    this.shadow = this.attachShadow({ mode: 'open' })
-  }
+    constructor() {
+        super()
+        this.shadow = this.attachShadow({ mode: 'open' })
+    }
 
-  connectedCallback() {
-    this.render()
-  }
+    connectedCallback() {
+        this.render()
+    }
 
-  render() {
+    render() {
 
-    this.shadow.innerHTML =
-      /*html*/
-      `
+        this.shadow.innerHTML =
+            /*html*/
+            `
       <style>
         * {
-  margin: 0;
-  padding: 0;
-}
+          margin: 0;
+          padding: 0;
+        }
 
-section {
-  margin: 0;
-  padding: 0;
-}
+        section {
+          margin: 0;
+          padding: 0;
+        }
 
-.none {
-  display: none;
-}
+        .none {
+          display: none;
+        }
 
-button {
-  background: transparent;
-  border: none;
-  cursor: pointer;
-}
+        button {
+          background: transparent;
+          border: none;
+          cursor: pointer;
+        }
 
-a {
-  text-decoration: none;
-}
+        a {
+          text-decoration: none;
+        }
 
-ul {
-  list-style: none;
-}
+        ul {
+          list-style: none;
+        }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  color: hsl(0, 0%, 100%);
-  font-family: 'Roboto', sans-serif;
-}
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+          color: hsl(0, 0%, 100%);
+          font-family: 'Roboto', sans-serif;
+        }
 
-input,
-label,
-select,
-textarea,
-li,
-span,
-p {
-  color: hsl(0, 0%, 100%);
-  font-family: 'Roboto', sans-serif;
-}
+        input,
+        label,
+        select,
+        textarea,
+        li,
+        span,
+        p {
+          color: hsl(0, 0%, 100%);
+          font-family: 'Roboto', sans-serif;
+        }
 
-/* boton menu y menu oculto */
-.top-bar-hamburguer {
-  z-index: 2;
-  position: relative;
-}
+        /* boton menu y menu oculto */
+        .top-bar-hamburguer {
+          z-index: 2;
+          position: relative;
+        }
 
-.top-bar-hamburguer button svg {
-  width: 3rem;
-}
+        .top-bar-hamburguer button svg {
+          width: 3rem;
+        }
 
-/* Animacion svg vvvvvvvvvvvvvv */
-.menu {
-  background-color: transparent;
-  border: none;
-  cursor: pointer;
-  display: flex;
-  padding: 0;
-}
+        /* Animacion svg vvvvvvvvvvvvvv */
+        .menu {
+          background-color: transparent;
+          border: none;
+          cursor: pointer;
+          display: flex;
+          padding: 0;
+        }
 
-.menu:hover .line {
-  stroke-width: 8;
-  stroke: orange;
-}
+        .menu:hover .line {
+          stroke-width: 8;
+          stroke: orange;
+        }
 
-.line {
-  fill: none;
-  stroke: hsl(0, 0%, 100%);
-  stroke-width: 6;
+        .line {
+          fill: none;
+          stroke: hsl(0, 0%, 100%);
+          stroke-width: 6;
 
-  transition: stroke-dasharray 400ms cubic-bezier(0.4, 0, 0.2, 1),
-    stroke-dashoffset 400ms cubic-bezier(0.4, 0, 0.2, 1);
-}
+          transition: stroke-dasharray 400ms cubic-bezier(0.4, 0, 0.2, 1),
+            stroke-dashoffset 400ms cubic-bezier(0.4, 0, 0.2, 1);
+        }
 
-.line1 {
-  stroke-dasharray: 60 207;
-  stroke-width: 6;
-}
+        .line1 {
+          stroke-dasharray: 60 207;
+          stroke-width: 6;
+        }
 
-.line2 {
-  stroke-dasharray: 60 60;
-  stroke-width: 6;
-}
+        .line2 {
+          stroke-dasharray: 60 60;
+          stroke-width: 6;
+        }
 
-.line3 {
-  stroke-dasharray: 60 207;
-  stroke-width: 6;
-}
+        .line3 {
+          stroke-dasharray: 60 207;
+          stroke-width: 6;
+        }
 
-.opened .line1 {
-  stroke: hsl(0, 0%, 0%);
-  stroke-dasharray: 90 207;
-  stroke-dashoffset: -134;
-  stroke-width: 6;
-}
+        .opened .line1 {
+          stroke: hsl(0, 0%, 0%);
+          stroke-dasharray: 90 207;
+          stroke-dashoffset: -134;
+          stroke-width: 6;
+        }
 
-.opened .line2 {
-  stroke: hsl(0, 0%, 0%);
-  stroke-dasharray: 1 60;
-  stroke-dashoffset: -30;
-  stroke-width: 6;
-}
+        .opened .line2 {
+          stroke: hsl(0, 0%, 0%);
+          stroke-dasharray: 1 60;
+          stroke-dashoffset: -30;
+          stroke-width: 6;
+        }
 
-.opened .line3 {
-  stroke: hsl(0, 0%, 0%);
-  stroke-dasharray: 90 207;
-  stroke-dashoffset: -134;
-  stroke-width: 6;
-}
+        .opened .line3 {
+          stroke: hsl(0, 0%, 0%);
+          stroke-dasharray: 90 207;
+          stroke-dashoffset: -134;
+          stroke-width: 6;
+        }
 
-/* Menu desplegable Hamburger  vvvvvvvvvvvvvv */
-.full-menu {
-  background-color: rgb(84, 61, 218);
-  height: 100vh;
-  top: -100vh; /* Menú oculto arriba del viewport */
-  display:flex;
-  opacity:0;
-  justify-content: center;
-  left: 0;
-  margin: 0;
-  overflow: hidden;
-  position: fixed;
-  transition: top 0.3s, opacity 0.3s;
-  width: 100%;
-  z-index: 0;
-  box-sizing: border-box;
-}
-
-
-.full-menu-active {
-  opacity:1;
-  display: flex;
-  position: fixed;
-  height: 100vh;
-  justify-content: center;
-  padding-top: 2rem;
-  box-sizing: border-box;
-  z-index: 0;
-  top: 0; /* Menú visible en la parte superior del viewport */
-  
-}
+        /* Menu desplegable Hamburger  vvvvvvvvvvvvvv */
+        .full-menu {
+          background-color: rgb(84, 61, 218);
+          height: 100vh;
+          top: -100vh; /* Menú oculto arriba del viewport */
+          display:flex;
+          opacity:0;
+          justify-content: center;
+          left: 0;
+          margin: 0;
+          overflow: hidden;
+          position: fixed;
+          transition: top 0.3s, opacity 0.3s;
+          width: 100%;
+          z-index: 0;
+          box-sizing: border-box;
+        }
 
 
-/* Menu desplegable Hamburger ^^^^^^^^^^^^*/
+        .full-menu-active {
+          opacity:1;
+          display: flex;
+          position: fixed;
+          height: 100vh;
+          justify-content: center;
+          padding-top: 2rem;
+          box-sizing: border-box;
+          z-index: 0;
+          top: 0; /* Menú visible en la parte superior del viewport */
+          
+        }
 
-.menu-form {
-  align-items: center;
-  display: flex;
-  flex-direction: column;
-  width: 80%;
-}
 
-.menu-form-title {
-  margin-bottom: 3rem;
-}
+        /* Menu desplegable Hamburger ^^^^^^^^^^^^*/
 
-.menu-form .form-row {
-  width: 100%;
-}
-.form {
-  flex: 2;
-}
-.form-row {
-  display: flex;
-  gap: 2rem;
-}
+        .menu-form {
+          align-items: center;
+          display: flex;
+          flex-direction: column;
+          width: 80%;
+        }
 
-.form-element {
-  display: flex;
-  flex: 1;
-  flex-direction: column;
-  gap: 0.5rem;
-  margin-bottom: 1rem;
-}
+        .menu-form-title {
+          margin-bottom: 3rem;
+        }
 
-.form-element-label label {
-  font-weight: 700;
-}
+        .menu-form .form-row {
+          width: 100%;
+        }
+        .form {
+          flex: 2;
+        }
+        .form-row {
+          display: flex;
+          gap: 2rem;
+        }
 
-.form-element-input * {
-  background-color: hsl(226, 64%, 66%);
-  border: none;
-  box-sizing: border-box;
-  font-size: 1rem;
-  height: 2rem;
-  outline: transparent;
-  padding: 0.5rem;
-  width: 100%;
-}
+        .form-element {
+          display: flex;
+          flex: 1;
+          flex-direction: column;
+          gap: 0.5rem;
+          margin-bottom: 1rem;
+        }
 
-.form-element-input input[type="number"]::-webkit-outer-spin-button,
-.form-element-input input[type="number"]::-webkit-inner-spin-button {
-  -webkit-appearance: none;
-  margin: 0;
-}
+        .form-element-label label {
+          font-weight: 700;
+        }
 
-.form-element-input input[type="date"]::-webkit-calendar-picker-indicator,
-.form-element-input input[type="time"]::-webkit-calendar-picker-indicator {
-  filter: invert(1);
-}
+        .form-element-input * {
+          background-color: hsl(226, 64%, 66%);
+          border: none;
+          box-sizing: border-box;
+          font-size: 1rem;
+          height: 2rem;
+          outline: transparent;
+          padding: 0.5rem;
+          width: 100%;
+        }
 
-.form-element-input textarea {
-  height: 20vh;
-  resize: none;
-}
+        .form-element-input input[type="number"]::-webkit-outer-spin-button,
+        .form-element-input input[type="number"]::-webkit-inner-spin-button {
+          -webkit-appearance: none;
+          margin: 0;
+        }
 
-.block {
-  height: 10vh;
-}
+        .form-element-input input[type="date"]::-webkit-calendar-picker-indicator,
+        .form-element-input input[type="time"]::-webkit-calendar-picker-indicator {
+          filter: invert(1);
+        }
 
-.border-red{
-  border: 1px solid red;
-}
+        .form-element-input textarea {
+          height: 20vh;
+          resize: none;
+        }
 
-.tab-content{
-  display:none;
-}
+        .block {
+          height: 10vh;
+        }
 
-.display {
-  display: block;
-}
+        .border-red{
+          border: 1px solid red;
+        }
 
-.top-bar-hamburguer-active {
-  z-index: 6;
-}
+        .tab-content{
+          display:none;
+        }
+
+        .display {
+          display: block;
+        }
+
+        .top-bar-hamburguer-active {
+          z-index: 6;
+        }
       </style>
       <div class="background-block">
 
@@ -330,17 +330,17 @@ p {
     </div>
 
       `
-    let menu = this.shadow.querySelector(".full-menu");
-    let boton = this.shadow.querySelector(".top-bar-hamburguer");
-    let svg = this.shadow.querySelector(".menu");
+        let menu = this.shadow.querySelector(".full-menu");
+        let boton = this.shadow.querySelector(".top-bar-hamburguer");
+        let svg = this.shadow.querySelector(".menu");
 
-    boton?.addEventListener("click", () => {
-      menu.classList.toggle("full-menu-active");
-      boton.classList.toggle("top-bar-hamburguer-active");
-      svg.classList.toggle("opened");
-    });
+        boton?.addEventListener("click", () => {
+            menu.classList.toggle("full-menu-active");
+            boton.classList.toggle("top-bar-hamburguer-active");
+            svg.classList.toggle("opened");
+        });
 
-  }
+    }
 
 
 }

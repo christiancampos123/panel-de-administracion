@@ -87,7 +87,7 @@ p {
   fill: hsl(34, 79%, 53%);
 }
 
-.table {
+.table-component {
   display: flex;
   flex: 1;
   flex-direction: column;
@@ -138,7 +138,7 @@ p {
         </style>
     
 
-        <section class="table">
+        <section class="table-component">
             <section class="filter">
             <div class="filter-button">
                 <button>
@@ -265,7 +265,7 @@ p {
             }));
         });
 
-        const tableSection = this.shadow.querySelector('.table');
+        const tableSection = this.shadow.querySelector('.table-component');
         tableSection?.addEventListener('click', async (event) => {
             if (event.target.closest('.edit-button')) {
                 alert("Has pulsado edition");
@@ -275,7 +275,6 @@ p {
                 document.dispatchEvent(new CustomEvent('showDeleteModal', {
 
                 }));
-
 
             }
         });
