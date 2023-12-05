@@ -4,10 +4,10 @@
 // comprobar caracfteres en el input y comprobar si son los necesarios, 
 // si no lo son borde rojo, else nada
 export default (() => {
-    const c = console.log;
+    
 
     // Selecciona el elemento padre .data-tabs
-    let dataTabs = document.querySelector(".data-tabs");
+    let dataTabs = document.querySelector("html");
 
     // Agrega un event listener al elemento padre
     dataTabs.addEventListener('input', (event) => {
