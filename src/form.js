@@ -317,7 +317,9 @@ p {
         const buttonSave = this.shadow.querySelector(".form-save-button");
 
         buttonSave?.addEventListener("click", () => {
-            alert("HAS PULSADO GUARDAR");
+          document.dispatchEvent(new CustomEvent('save-notification', {
+
+          }));
         });
     
         // boton de clean
